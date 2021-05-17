@@ -1,14 +1,7 @@
-_**Notice**: Development on libstorj is currently on pause during our v3 rearchitecture. Please see https://github.com/storj/storj for ongoing v3 development._
-
-libstorj
+X Cloud's Command Line Interface (CLI)
 =======
 
-[![storj.io](https://storj.io/img/storj-badge.svg)](https://storj.io)
-[![Build Status](https://travis-ci.org/storj/libstorj.svg?branch=master)](https://travis-ci.org/storj/libstorj)
-[![GitHub version](https://badge.fury.io/gh/storj%2Flibstorj.svg)](https://badge.fury.io/gh/storj%2Flibstorj)
-[![Chat on rocket.chat](https://img.shields.io/badge/chat-rocket.chat-red.svg)](https://community.storj.io/channel/dev)
-
-Asynchronous multi-platform C library and CLI for encrypted file transfer on the Storj network.
+Asynchronous multi-platform C library and CLI for encrypted file transfer on the StorX network.
 
 ## Feature Highlights
 
@@ -22,7 +15,6 @@ Asynchronous multi-platform C library and CLI for encrypted file transfer on the
 - Asynchronous progress updates in bytes per file
 - Transfers can be cleanly canceled per file
 - Seed based file encryption key for portability between devices
-- Reference implementation for [SIP5](https://github.com/Storj/sips/blob/main/sip-0005.md) file standard
 
 ## Build
 
@@ -39,7 +31,7 @@ To run tests:
 
 To run command line utility:
 ```bash
-./src/storj --help
+./src/storx --help
 ```
 
 And to install locally:
@@ -57,6 +49,11 @@ apt-get install build-essential libtool autotools-dev automake libmicrohttpd-dev
 Dependencies:
 ```bash
 apt-get install libcurl4-gnutls-dev nettle-dev libjson-c-dev libuv1-dev
+```
+
+Package-Config:
+```bash
+apt-get install pkg-config
 ```
 
 ### OS X Dependencies (w/ homebrew):
@@ -93,7 +90,7 @@ cd ./depends
 make HOST="x86_64-w64-mingw32"
 ```
 
-Configure command for libstorj-c:
+Configure command for CLI:
 ```
 PKG_CONFIG_LIBDIR="$(pwd)/depends/build/x86_64-w64-mingw32/lib/pkgconfig" CFLAGS="-DCURL_STATICLIB -I$(pwd)/depends/build/x86_64-w64-mingw32/include -L$(pwd)/depends/build/x86_64-w64-mingw32/lib -static" ./configure --with-pic --host=x86_64-w64-mingw32 --enable-static --disable-shared --prefix=$(pwd)/depends/build/x86_64-w64-mingw32
 ```
@@ -113,7 +110,7 @@ cd ./depends
 make HOST="x86_64-w64-mingw32" BUILD_DLL=1
 ```
 
-Configure command for libstorj-c:
+Configure command for CLI:
 ```
 PKG_CONFIG_LIBDIR="$(pwd)/depends/build/x86_64-w64-mingw32/lib/pkgconfig" CFLAGS="-I$(pwd)/depends/build/x86_64-w64-mingw32/include -L$(pwd)/depends/build/x86_64-w64-mingw32/lib -DSTORJDLL" ./configure --host=x86_64-w64-mingw32 --prefix=$(pwd)/depends/build/x86_64-w64-mingw32
 ```

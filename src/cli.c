@@ -821,7 +821,7 @@ int main(int argc, char **argv)
     }
 
     if (!storj_bridge) {
-        storj_bridge = "https://api.storj.io:443/";
+        storj_bridge = "https://api.storx.io:443/";
     }
 
     // Parse the host, part and proto from the storj bridge url
